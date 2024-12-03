@@ -24,44 +24,57 @@ What are the core features that your program should have? These should be things
 
 1. Bricks
 - One 2D Array of Object "Brick", leave "null" in between 
-- "Brick" rectangle, same sizes
+- "Brick" rectangle, same sizes & random rainbow color
 2. Projectile
-- 
+- Ball class
+  - movement w/ PVector after bouncing (random x, y speed)
+  - velocity
+- Changes rainbow color
+- Collides with bricks, destroying them
+- Bounces off Paddle at random angle
+- Bounces off walls
+3. Paddle
+- Moves w/ mouse
+- Long rectangle
+- Bounces ball in x & y direction according to paddle movement
+4. Reset game when win or lost
+- Space bar
 
 ### Extra Features
 What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
 
-YOUR ANSWERS HERE
+
 
 ### Array Usage
 How will you be using arrays in this project?
 
 1D Array:
-- YOUR ANSER HERE
+- 
 
 2D Array:
-- YOUR ANSWER HERE
+- Array of rectangles
 
 
 ### Controls
 How will your program be controlled? List all keyboard commands and mouse interactions.
 
 Keyboard Commands:
-- LIST OF COMMANDS HERE
+- "space" to start the game
 
 Mouse Control:
-- Mouse movement:
-- Mouse pressed:
-
+- Mouse movement: use mouseX = paddle movement
+- Mouse pressed: N/A
 
 ### Classes
 What classes will you be creating for this project? Include the instance variables and methods that you believe you will need. You will be required to create at least 2 different classes. If you are going to use classes similar to those we've made for previous assignments, you will have to add new features to them.
 
-CLASS NAME0
+Ball Class
 - Instance variables:
-  - LIST INSTANCE VARS HERE
+  - PVector (.x & .y)
+  - Size
+  - Color
 - METHODS
-  - LIST METHODS HERE
+  - 
 
 CLASS NAME1
 - Instance variables:
