@@ -33,6 +33,7 @@ What are the core features that your program should have? These should be things
 - Collides with bricks, destroying them
 - Bounces off Paddle at random angle
 - Bounces off walls
+- Ball starts random spot above paddle
 3. Paddle
 - Moves w/ mouse
 - Long rectangle
@@ -42,14 +43,14 @@ What are the core features that your program should have? These should be things
 
 ### Extra Features
 What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
-
+1. Power-ups
 
 
 ### Array Usage
 How will you be using arrays in this project?
 
 1D Array:
-- 
+- 1D array of power-ups, cycle through the list, select each one randomly upon block destruction
 
 2D Array:
 - Array of rectangles
@@ -73,7 +74,24 @@ Ball Class
   - PVector (.x & .y)
   - Size
   - Color
+  - xspeed, yspeed
 - METHODS
+  - constructor()
+  - display()
+  - collisionCheck() 
+  - move()
+ 
+Brick Array Class
+- Instance variables:
+  - 2D Array
+  - Size
+  - Color
+- METHODS
+  - constructor()
+  - display()
+ 
+Paddle Class
+- Instance variables:
   - 
 
 CLASS NAME1
