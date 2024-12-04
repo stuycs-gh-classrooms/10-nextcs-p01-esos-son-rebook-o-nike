@@ -61,8 +61,7 @@ Additional elements to enhance the game experience:
 ### Controls
 
 #### Keyboard Commands:
-- **P**: Pause the game.
-- **R**: Restart the game.
+- **SPACE** restart
 
 #### Mouse Control:
 - **Mouse Movement**: Paddle moves horizontally following the `mouseX` position.
