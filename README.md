@@ -19,83 +19,103 @@ This project will be completed in phases. The first phase will be to work on thi
 
 #### Selected Project: BREAKOUT/ARKANOID
 
-### Necessary Features
-What are the core features that your program should have? These should be things that __must__ be implemented in order to make the program useable/playable, not extra features that could be added to make the program more interesting/fun.
+---
 
-1. Bricks
-- One 2D Array of Object "Brick", leave "null" in between 
-- "Brick" rectangle, same sizes & random rainbow color
-2. Projectile
-- Ball class
-  - movement w/ PVector after bouncing (random x, y speed)
-  - velocity
-- Changes rainbow color
-- Collides with bricks, destroying them
-- Bounces off Paddle at random angle
-- Bounces off walls
-- Ball starts random spot above paddle
-3. Paddle
-- Moves w/ mouse
-- Long rectangle
-- Bounces ball in x & y direction according to paddle movement
-4. Reset game when win or lost
-- Space bar
+### Necessary Features
+These are the core features that the program must implement to ensure it is playable:
+1. A paddle controlled by the player.
+2. A bouncing ball that interacts with the paddle, walls, and bricks.
+3. Bricks arranged in a grid that disappear when hit by the ball.
+4. Game-over condition (e.g., the ball falls below the paddle).
+5. Win condition (e.g., all bricks are cleared).
+
+---
 
 ### Extra Features
-What are some features that are not essential to the program, but you would like to see (provided you have time after completing the necessary features. Theses can be customizations that are not part of the core requirements.
-1. Power-ups
+Additional elements to enhance the game experience:
+1. Power-ups:
+   - Enlarging the paddle.
+   - Slowing down the ball.
+   - Adding an extra ball (multiball).
+   - Gaining extra lives.
+2. Increasing difficulty as levels progress:
+   - Faster ball speed.
+   - Different brick patterns.
+3. Sound effects and music.
+4. Dynamic backgrounds or animations.
+5. Scoring system with bonuses for combos.
+6. Pause and restart functionality.
 
+---
 
 ### Array Usage
-How will you be using arrays in this project?
 
-1D Array:
-- 1D array of power-ups, cycle through the list, select each one randomly upon block destruction
+#### 1D Array:
+- To manage the power-ups or store ball instances in the case of multiball.
 
-2D Array:
-- Array of rectangles
+#### 2D Array:
+- To represent the grid of bricks. Each element in the array corresponds to a brick and can store its state (e.g., present, destroyed, or power-up carrier).
 
+---
 
 ### Controls
-How will your program be controlled? List all keyboard commands and mouse interactions.
 
-Keyboard Commands:
-- "space" to start the game
+#### Keyboard Commands:
+- **P**: Pause the game.
+- **R**: Restart the game.
 
-Mouse Control:
-- Mouse movement: use mouseX = paddle movement
-- Mouse pressed: N/A
+#### Mouse Control:
+- **Mouse Movement**: Paddle moves horizontally following the `mouseX` position.
+
+---
 
 ### Classes
-What classes will you be creating for this project? Include the instance variables and methods that you believe you will need. You will be required to create at least 2 different classes. If you are going to use classes similar to those we've made for previous assignments, you will have to add new features to them.
 
-Ball Class
-- Instance variables:
-  - PVector (.x & .y)
-  - Size
-  - Color
-  - xspeed, yspeed
-- METHODS
-  - constructor()
-  - display()
-  - collisionCheck() 
-  - move()
- 
-Brick Array Class
-- Instance variables:
-  - 2D Array
-  - Size
-  - Color
-- METHODS
-  - constructor()
-  - display()
- 
-Paddle Class
-- Instance variables:
-  - 
+#### 1. **Paddle**
+   - **Instance Variables:**
+     - `float y`: Vertical position of the paddle (horizontal position will follow `mouseX`).
+     - `float width, height`: Dimensions of the paddle.
 
-CLASS NAME1
-- Instance variables:
-  - LIST INSTANCE VARS HERE444444444444444444444444444444444444444444445r 
-- METHODS
-  - LIST METHODS HERE
+   - **Methods:**
+     - `void display()`: Draw the paddle.
+     - `void update()`: Align the paddle's horizontal position with `mouseX`.
+     - `boolean hitBall(Ball b)`: Check if the ball collides with the paddle.
+
+---
+
+#### 2. **Ball**
+   - **Instance Variables:**
+     - `float x, y`: Position of the ball.
+     - `float radius`: Radius of the ball.
+     - `float xSpeed, ySpeed`: Speed and direction of the ball.
+
+   - **Methods:**
+     - `void display()`: Draw the ball.
+     - `void move()`: Update the ball's position.
+     - `void checkCollision(Paddle p, Brick[][] bricks)`: Handle collisions with the paddle and bricks.
+
+---
+
+#### 3. **Brick**
+   - **Instance Variables:**
+     - `float x, y`: Position of the brick.
+     - `float width, height`: Dimensions of the brick.
+     - `boolean isDestroyed`: State of the brick.
+     - `boolean hasPowerUp`: Whether the brick contains a power-up.
+
+   - **Methods:**
+     - `void display()`: Draw the brick.
+     - `boolean hitByBall(Ball b)`: Check if the ball hits the brick and update its state.
+
+---
+
+#### 4. **PowerUp**
+   - **Instance Variables:**
+     - `float x, y`: Position of the power-up.
+     - `float speed`: Speed at which it falls.
+     - `String type`: Type of power-up (e.g., "enlarge", "slowBall").
+
+   - **Methods:**
+     - `void display()`: Draw the power-up.
+     - `void move()`: Update the position.
+     - `boolean caughtByPaddle(Paddle p)`: Check if the power-up is caught by the paddle.
