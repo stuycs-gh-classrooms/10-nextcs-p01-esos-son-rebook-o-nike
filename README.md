@@ -98,7 +98,7 @@ Additional elements to enhance the game experience:
 #### 3. **Brick**
    - **Instance Variables:**
      - `float x, y`: Position of the brick.
-     - `float width, height`: Dimensions of the brick.
+     - `float Bwidth, Bheight`: Dimensions of the brick.
      - `boolean isDestroyed`: State of the brick.
      - `boolean hasPowerUp`: Whether the brick contains a power-up.
 
