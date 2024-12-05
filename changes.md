@@ -11,7 +11,7 @@
      - `void display()`: Draw the brick.
      - `boolean hitByBall(Ball b)`: Check if the ball hits the brick and update its state.
 
-Changes: Instead of boolean isDestroyed, simply set indices to 'null' upon collision with a ball. 
+##### Changes: Instead of boolean isDestroyed, simply set indices to 'null' upon collision with a ball. 
 ---
 
 ### Extra Features
@@ -29,5 +29,5 @@ Additional elements to enhance the game experience:
 5. Scoring system with bonuses for combos.
 6. Pause and restart functionality.
 
-Changes: "How will we implement sound effects and music?" By accessing Processing's Sound library. Importing the library, using the method 'play()' with an audio file. 
+##### Changes: "How will we implement sound effects and music?" By accessing Processing's Sound library. Importing the library, using the method 'play()' with an audio file. 
 ---
